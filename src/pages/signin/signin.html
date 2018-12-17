@@ -17,5 +17,9 @@
   <ion-item>
     <ion-input placeholder="Name" [(ngModel)]="name"></ion-input>
   </ion-item>
+  <ion-item>
+    <ion-label>Admin</ion-label>
+    <ion-radio value="true" (ionSelect)=selectedRadioBtn($event)></ion-radio>
+  </ion-item>
   <button ion-button full (click)="onRegister()"> Sign In </button>
 </ion-content>

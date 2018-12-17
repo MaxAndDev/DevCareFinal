@@ -20,6 +20,12 @@ export class SigninPage {
 
   }
 
+  selectedRadioBtn(value){
+    console.log(value);
+    return value;
+  }
+
+
   onRegister(){
     console.log("Registration called", this.email, this.password, this.company, this.name);
     this.httpService.setSignIn(this.email, this.password, this.company, this.name).subscribe(data =>{

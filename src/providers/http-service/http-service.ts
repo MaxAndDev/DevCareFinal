@@ -17,6 +17,7 @@ export class HttpServiceProvider {
    
   }
 
+
   getLogin(email, password): Observable<any>{
     return this.http.post(this.api_url + this.user + this.param_login, {
       "email": email,
