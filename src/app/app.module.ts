@@ -41,7 +41,7 @@ import { ErrorServiceProvider } from '../providers/error-service/error-service';
     HttpServiceProvider,
     TokenStorageProvider,
     AuthInterceptorProvider,
-    AlertServiceProvider
+    AlertServiceProvider,
     TokenStorageProvider,
     ErrorServiceProvider
   ]

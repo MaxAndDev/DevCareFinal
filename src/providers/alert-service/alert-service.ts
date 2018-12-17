@@ -8,7 +8,16 @@ export class AlertServiceProvider {
 
   constructor(public http: HttpClient, private alertCtrl: AlertController) { }
 
-  createAlertSignIn() {
+  createAlertSignInPositive() {
+    let alert = this.alertCtrl.create({
+      title: 'Sign In',
+      subTitle: 'Your Sign In was successful',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+
+  creatAlertSignInErr() {
     let alert = this.alertCtrl.create({
       title: 'Sign In',
       subTitle: 'Your Sign In was successful',
@@ -22,7 +31,10 @@ export class AlertServiceProvider {
       case "Login":
         break;
       case "Signin":
-        this.createAlertSignIn()
+        this.createAlertSignInPositive()
+        break;
+      case "SigninErr":
+        this.creatAlertSignInErr();
         break;
     }
   }
