@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TokenStorageProvider } from '../../providers/token-storage/token-storage';
+import { SigninPage } from '../signin/signin';
 
 @Component({
   selector: 'page-home',
@@ -21,7 +22,7 @@ export class HomePage {
   }
 
   onSignIn(){
-
+    this.navCtrl.push(SigninPage);
   }
 
 }
