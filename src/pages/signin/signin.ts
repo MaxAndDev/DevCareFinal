@@ -16,9 +16,7 @@ export class SigninPage {
   company: String;
   name: String;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: HttpServiceProvider, private errHandler: ErrorServiceProvider) { }
-  constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: HttpServiceProvider, private alert: AlertServiceProvider) { }
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: HttpServiceProvider, private errHandler: ErrorServiceProvider, private alert: AlertServiceProvider) { }
   ionViewDidLoad() {
 
   }
