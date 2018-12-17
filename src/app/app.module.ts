@@ -4,17 +4,21 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HttpServiceProvider } from '../providers/http-service/http-service';
 import { TokenStorageProvider } from '../providers/token-storage/token-storage';
+import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-interceptor';
+import { SigninPage } from '../pages/signin/signin';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    SigninPage
   ],
   imports: [
     BrowserModule,
@@ -24,14 +28,17 @@ import { TokenStorageProvider } from '../providers/token-storage/token-storage';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    SigninPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
     HttpServiceProvider,
-    TokenStorageProvider
+    TokenStorageProvider,
+    AuthInterceptorProvider
   ]
 })
 export class AppModule {}
