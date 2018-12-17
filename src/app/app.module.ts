@@ -13,6 +13,7 @@ import { HttpServiceProvider } from '../providers/http-service/http-service';
 import { TokenStorageProvider } from '../providers/token-storage/token-storage';
 import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-interceptor';
 import { SigninPage } from '../pages/signin/signin';
+import { ErrorServiceProvider } from '../providers/error-service/error-service';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,8 @@ import { SigninPage } from '../pages/signin/signin';
     HttpServiceProvider,
     TokenStorageProvider,
     AuthInterceptorProvider
+    TokenStorageProvider,
+    ErrorServiceProvider
   ]
 })
 export class AppModule {}
