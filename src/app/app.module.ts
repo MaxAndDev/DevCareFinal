@@ -12,11 +12,13 @@ import { HomePage } from '../pages/home/home';
 import { HttpServiceProvider } from '../providers/http-service/http-service';
 import { TokenStorageProvider } from '../providers/token-storage/token-storage';
 import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-interceptor';
+import { SigninPage } from '../pages/signin/signin';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    SigninPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-inte
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    SigninPage
   ],
   providers: [
     StatusBar,
