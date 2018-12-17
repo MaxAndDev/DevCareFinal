@@ -13,6 +13,7 @@ import { HttpServiceProvider } from '../providers/http-service/http-service';
 import { TokenStorageProvider } from '../providers/token-storage/token-storage';
 import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-interceptor';
 import { SigninPage } from '../pages/signin/signin';
+import { AlertServiceProvider } from '../providers/alert-service/alert-service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SigninPage } from '../pages/signin/signin';
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
     HttpServiceProvider,
     TokenStorageProvider,
-    AuthInterceptorProvider
+    AuthInterceptorProvider,
+    AlertServiceProvider
   ]
 })
 export class AppModule {}
