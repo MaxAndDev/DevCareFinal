@@ -40,9 +40,8 @@ import { AlertServiceProvider } from '../providers/alert-service/alert-service';
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
     HttpServiceProvider,
     TokenStorageProvider,
-    AuthInterceptorProvider
     TokenStorageProvider,
-    ErrorServiceProvider
+    ErrorServiceProvider,
     AuthInterceptorProvider,
     AlertServiceProvider
   ]
