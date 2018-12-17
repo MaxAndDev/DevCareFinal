@@ -19,8 +19,8 @@ export class SigninPage {
 
   }
 
-  onRegister(email, password, company, name){
-    console.log("Registration called", email, password, company, name);
+  onRegister(){
+    console.log("Registration called", this.email, this.password, this.company, this.name);
   }
 
 }
