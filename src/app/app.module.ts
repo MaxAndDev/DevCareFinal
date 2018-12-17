@@ -10,6 +10,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HttpServiceProvider } from '../providers/http-service/http-service';
 import { TokenStorageProvider } from '../providers/token-storage/token-storage';
+import { ErrorServiceProvider } from '../providers/error-service/error-service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { TokenStorageProvider } from '../providers/token-storage/token-storage';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HttpServiceProvider,
-    TokenStorageProvider
+    TokenStorageProvider,
+    ErrorServiceProvider
   ]
 })
 export class AppModule {}
