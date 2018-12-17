@@ -10,6 +10,7 @@ export class HttpServiceProvider {
   api_url = "http://localhost:3030/";
   user = "user/"
   param_login = "login";
+  param_signin = "signup"
 
 
   constructor(private http: HttpClient) {
@@ -20,6 +21,15 @@ export class HttpServiceProvider {
     return this.http.post(this.api_url + this.user + this.param_login, {
       "email": email,
       "password": password
+    });
+  }
+
+  setSignIn(email, password, company, name): Observable<any>{
+    return this.http.post(this.api_url + this.user + this.param_signin, {
+      "email": email,
+      "password": password,
+      "company": company,
+      "name": name
     });
   }
 
