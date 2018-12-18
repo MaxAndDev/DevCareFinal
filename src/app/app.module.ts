@@ -17,12 +17,14 @@ import { AlertServiceProvider } from '../providers/alert-service/alert-service';
 import { ErrorServiceProvider } from '../providers/error-service/error-service';
 import { AlertStringsProvider } from '../providers/alert-strings/alert-strings';
 import { GeneralStringsProvider } from '../providers/general-strings/general-strings';
+import { OverviewPage } from '../pages/overview/overview';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    SigninPage
+    SigninPage,
+    OverviewPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { GeneralStringsProvider } from '../providers/general-strings/general-str
   entryComponents: [
     MyApp,
     HomePage,
-    SigninPage
+    SigninPage,
+    OverviewPage
   ],
   providers: [
     StatusBar,
