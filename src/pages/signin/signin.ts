@@ -11,6 +11,10 @@ import { AlertServiceProvider } from '../../providers/alert-service/alert-servic
 })
 export class SigninPage {
 
+  mModule: String = "Signin";
+  mStatusSuc: String = "Success";
+  mStatusErr: String = "Err";
+
   email: String;
   password: String;
   company: String;
@@ -21,17 +25,17 @@ export class SigninPage {
 
   }
 
-  selectedRadioBtn(value){
+  selectedRadioBtn(value) {
     console.log(value);
     return value;
   }
 
 
-  onRegister(){
+  onRegister() {
     console.log("Registration called", this.email, this.password, this.company, this.name);
-    this.httpService.setSignIn(this.email, this.password, this.company, this.name).subscribe(data =>{
+    this.httpService.setSignIn(this.email, this.password, this.company, this.name).subscribe(data => {
       console.log(data);
-      this.alert.createAlertSignIn();
+      this.alert.createAlert(this.mModule, this.mStatusSuc);
     }, err => {
       this.errHandler.handleError(err);
     })
