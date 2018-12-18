@@ -46,6 +46,7 @@ import { DeviceStorageProvider } from '../providers/device-storage/device-storag
     HttpServiceProvider,
     AuthInterceptorProvider,
     AlertServiceProvider,
+    AlertStringsProvider,
     ErrorServiceProvider,
     GeneralStringsProvider,
     DeviceStorageProvider

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DeviceStorageProvider } from '../../providers/device-storage/device-storage';
 
 /**
  * Generated class for the OverviewPage page.
@@ -15,12 +16,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class OverviewPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private deviceStorage: DeviceStorageProvider) {
   }
 
   ionViewDidLoad() {
-    
-
+    this.deviceStorage.getDevices();
   }
 
 }
