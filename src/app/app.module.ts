@@ -15,6 +15,7 @@ import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-inte
 import { SigninPage } from '../pages/signin/signin';
 import { ErrorServiceProvider } from '../providers/error-service/error-service';
 import { AlertServiceProvider } from '../providers/alert-service/alert-service';
+import { ErrorServiceProvider } from '../providers/error-service/error-service';
 
 @NgModule({
   declarations: [
@@ -40,10 +41,10 @@ import { AlertServiceProvider } from '../providers/alert-service/alert-service';
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
     HttpServiceProvider,
     TokenStorageProvider,
-    TokenStorageProvider,
-    ErrorServiceProvider,
     AuthInterceptorProvider,
-    AlertServiceProvider
+    AlertServiceProvider,
+    TokenStorageProvider,
+    ErrorServiceProvider
   ]
 })
 export class AppModule {}
