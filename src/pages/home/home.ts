@@ -18,7 +18,7 @@ export class HomePage {
 
   onLogin(){
     this.tokenStorage.getToken(this.email, this.password);
-    if (localStorage.)
+    
   }
 
   onSignIn(){
