@@ -12,11 +12,15 @@ import { HomePage } from '../pages/home/home';
 import { HttpServiceProvider } from '../providers/http-service/http-service';
 import { TokenStorageProvider } from '../providers/token-storage/token-storage';
 import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-interceptor';
+import { SigninPage } from '../pages/signin/signin';
+import { ErrorServiceProvider } from '../providers/error-service/error-service';
+import { AlertServiceProvider } from '../providers/alert-service/alert-service';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    SigninPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,8 @@ import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-inte
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    SigninPage
   ],
   providers: [
     StatusBar,
@@ -35,7 +40,10 @@ import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-inte
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
     HttpServiceProvider,
     TokenStorageProvider,
-    AuthInterceptorProvider
+    TokenStorageProvider,
+    ErrorServiceProvider,
+    AuthInterceptorProvider,
+    AlertServiceProvider
   ]
 })
 export class AppModule {}
