@@ -8,17 +8,19 @@ export class ErrorServiceProvider {
 
   constructor(public http: HttpClient, private alertCntrl: AlertServiceProvider) { }
 
-  handleError(error) {
+  handleError(error, module) {
     switch (error.status) {
       case 401:
-        console.log(error.status);
-          this.alertCntrl.createAlert("SigninErr");
+        console.log(error);
+          this.alertCntrl.createAlertHandler()
         break;
       case 409:
+      console.log(error);
         console.log(error.status);
         this.alertCntrl.createAlert("SigninErr");        
         break;
       case 500:
+      console.log(error);
         console.log(error.status);
         this.alertCntrl.createAlert("SigninErr");                
         break;
