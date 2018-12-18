@@ -15,6 +15,7 @@ import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-inte
 import { SigninPage } from '../pages/signin/signin';
 import { AlertServiceProvider } from '../providers/alert-service/alert-service';
 import { ErrorServiceProvider } from '../providers/error-service/error-service';
+import { AlertStringsProvider } from '../providers/alert-strings/alert-strings';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ErrorServiceProvider } from '../providers/error-service/error-service';
     AuthInterceptorProvider,
     AlertServiceProvider,
     TokenStorageProvider,
-    ErrorServiceProvider
+    ErrorServiceProvider,
+    AlertStringsProvider
   ]
 })
 export class AppModule {}
