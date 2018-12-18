@@ -8,6 +8,7 @@ export class AlertServiceProvider {
 
   constructor(public http: HttpClient, private alertCtrl: AlertController) { }
 
+  //Signin 200
   createAlertSignInPositive() {
     let alert = this.alertCtrl.create({
       title: 'Sign In',
@@ -17,10 +18,11 @@ export class AlertServiceProvider {
     alert.present();
   }
 
+  //Signin 409
   creatAlertSignInErr() {
     let alert = this.alertCtrl.create({
       title: 'Sign In',
-      subTitle: 'Your Sign In was successful',
+      subTitle: 'Email already exists!',
       buttons: ['OK']
     });
     alert.present();
