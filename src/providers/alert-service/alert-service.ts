@@ -26,14 +26,14 @@ export class AlertServiceProvider {
     alert.present();
   }
 
-  createAlert(modul) {
-    switch (modul) {
-      case "Login":
+  createAlert(modul, status) {
+    switch (modul && status) {
+      case "Login" && "Success":
         break;
-      case "Signin":
+      case "Signin" && "Success":
         this.createAlertSignInPositive()
         break;
-      case "SigninErr":
+      case "Signin" && "Err":
         this.creatAlertSignInErr();
         break;
     }
