@@ -1,17 +1,19 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-/*
-  Generated class for the GeneralStringsProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class GeneralStringsProvider {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello GeneralStringsProvider Provider');
-  }
+  constructor() {  }
+
+  module_SignIn: String = 'Signin'
+  module_Login: String = 'Login'
+  module_Overview: String = 'Overview'
+  module_Details: String = 'Details'
+  module_Scanner: String = 'Scanner'
+  module_GetDev: String = 'GetDev'
+  module_GiveDev: String = 'GiveDev'
+
+  StautsError: String = "Err"
+  StatusSuccess: String = "Success"
 
 }
