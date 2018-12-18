@@ -17,6 +17,7 @@ import { ErrorServiceProvider } from '../providers/error-service/error-service';
 import { AlertStringsProvider } from '../providers/alert-strings/alert-strings';
 import { GeneralStringsProvider } from '../providers/general-strings/general-strings';
 import { OverviewPage } from '../pages/overview/overview';
+import { DeviceStorageProvider } from '../providers/device-storage/device-storage';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { OverviewPage } from '../pages/overview/overview';
     AuthInterceptorProvider,
     AlertServiceProvider,
     ErrorServiceProvider,
-    GeneralStringsProvider
+    GeneralStringsProvider,
+    DeviceStorageProvider
   ]
 })
 export class AppModule {}
