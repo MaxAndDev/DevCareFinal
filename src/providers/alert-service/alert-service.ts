@@ -8,33 +8,31 @@ export class AlertServiceProvider {
 
   constructor(public http: HttpClient, private alertCtrl: AlertController) { }
 
-  //Signin 200
-  createAlertSignInPositive() {
+
+  creatAlert(title, text) {
     let alert = this.alertCtrl.create({
-      title: 'Sign In',
-      subTitle: 'Your Sign In was successful',
+      title: title,
+      subTitle: text,
       buttons: ['OK']
     });
     alert.present();
   }
 
-  //Signin 409
-  creatAlertSignInErr() {
-    let alert = this.alertCtrl.create({
-      title: 'Sign In',
-      subTitle: 'Email already exists!',
-      buttons: ['OK']
-    });
-    alert.present();
-  }
-
-  createAlert(modul, status) {
+  createAlertHandler(modul, status) {
     switch (modul && status) {
       case "Signin" && "Success":
-        this.createAlertSignInPositive()
         break;
       case "Signin" && "Err":
-        this.creatAlertSignInErr();
+        break;
+      case "Overview" && "Err":
+        break;
+      case "Details" && "Err":
+        break;
+      case "Scanner" && "Err":
+        break;
+      case "GetDevice" && "Err":
+        break;
+      case "GiveDevice" && "Err":
         break;
     }
   }
