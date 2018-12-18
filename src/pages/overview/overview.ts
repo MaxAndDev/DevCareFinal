@@ -19,7 +19,8 @@ export class OverviewPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad OverviewPage');
+    
+
   }
 
 }

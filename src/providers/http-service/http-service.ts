@@ -9,6 +9,7 @@ export class HttpServiceProvider {
 
   api_url = "http://localhost:3030/";
   user = "user/"
+  device = "device/"
   param_login = "login";
   param_signin = "signup"
 
@@ -32,6 +33,10 @@ export class HttpServiceProvider {
       "company": company,
       "name": name
     });
+  }
+
+  getDevices(){
+    return this.http.get(this.api_url + this.device );
   }
 
 }
