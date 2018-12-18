@@ -10,7 +10,6 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HttpServiceProvider } from '../providers/http-service/http-service';
-import { TokenStorageProvider } from '../providers/token-storage/token-storage';
 import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-interceptor';
 import { SigninPage } from '../pages/signin/signin';
 import { AlertServiceProvider } from '../providers/alert-service/alert-service';
@@ -44,12 +43,9 @@ import { OverviewPage } from '../pages/overview/overview';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
     HttpServiceProvider,
-    TokenStorageProvider,
     AuthInterceptorProvider,
     AlertServiceProvider,
-    TokenStorageProvider,
     ErrorServiceProvider,
-    AlertStringsProvider,
     GeneralStringsProvider
   ]
 })
