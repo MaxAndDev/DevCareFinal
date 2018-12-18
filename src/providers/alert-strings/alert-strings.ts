@@ -6,9 +6,9 @@ export class AlertStringsProvider {
 
   constructor() { }
 
-  title_SignIn: String = 'SignIn'
-  text_SignIn_err: String = 'Email already exists!'
-  text_SignIn_suc: String = 'SignIn was successful!'
+  title_SignIn: String = 'Sign In'
+  text_SignIn_err: String = 'E-Mail already exists!'
+  text_SignIn_suc: String = 'Sign In was successful!'
 
   title_Overview: String = 'Overview'
   text_Overview_err: String = 'Something went wrong!'

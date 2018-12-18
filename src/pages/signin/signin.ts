@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
 import { ErrorServiceProvider } from '../../providers/error-service/error-service';
 import { AlertServiceProvider } from '../../providers/alert-service/alert-service';
+import { GeneralStringsProvider } from '../../providers/general-strings/general-strings';
 
 @IonicPage()
 @Component({
@@ -20,7 +21,7 @@ export class SigninPage {
   company: String;
   name: String;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: HttpServiceProvider, private errHandler: ErrorServiceProvider, private alert: AlertServiceProvider) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: HttpServiceProvider, private errHandler: ErrorServiceProvider, private alert: AlertServiceProvider, private generalStrings: GeneralStringsProvider) { }
   ionViewDidLoad() {
 
   }
@@ -35,9 +36,9 @@ export class SigninPage {
     console.log("Registration called", this.email, this.password, this.company, this.name);
     this.httpService.setSignIn(this.email, this.password, this.company, this.name).subscribe(data => {
       console.log(data);
-      this.alert.createAlert(this.mModule, this.mStatusSuc);
+      this.alert.createAlertHandler(this.generalStrings.module_SignIn, this.generalStrings.StatusSuccess);
     }, err => {
-      this.errHandler.handleError(err);
+      this.errHandler.handleError(err, this.generalStrings.module_SignIn);
     })
   }
 

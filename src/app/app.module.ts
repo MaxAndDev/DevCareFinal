@@ -16,6 +16,7 @@ import { SigninPage } from '../pages/signin/signin';
 import { AlertServiceProvider } from '../providers/alert-service/alert-service';
 import { ErrorServiceProvider } from '../providers/error-service/error-service';
 import { AlertStringsProvider } from '../providers/alert-strings/alert-strings';
+import { GeneralStringsProvider } from '../providers/general-strings/general-strings';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { AlertStringsProvider } from '../providers/alert-strings/alert-strings';
     AlertServiceProvider,
     TokenStorageProvider,
     ErrorServiceProvider,
-    AlertStringsProvider
+    AlertStringsProvider,
+    GeneralStringsProvider
   ]
 })
 export class AppModule {}
