@@ -1,22 +1,19 @@
 import { Component } from '@angular/core';
+import { Input } from '@angular/core/src/metadata/directives';
 
-/**
- * Generated class for the DeviceComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
+
 @Component({
   selector: 'device',
   templateUrl: 'device.html'
 })
 export class DeviceComponent {
 
-  text: string;
+  
+  text: String;
 
   constructor() {
-    console.log('Hello DeviceComponent Component');
-    this.text = 'Hello World';
+    this.text= "test";
+
   }
 
 }

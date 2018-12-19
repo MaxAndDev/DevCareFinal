@@ -18,13 +18,15 @@ import { AlertStringsProvider } from '../providers/alert-strings/alert-strings';
 import { GeneralStringsProvider } from '../providers/general-strings/general-strings';
 import { OverviewPage } from '../pages/overview/overview';
 import { DeviceStorageProvider } from '../providers/device-storage/device-storage';
+import { DeviceComponent } from '../components/device/device';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     SigninPage,
-    OverviewPage
+    OverviewPage,
+    DeviceComponent
   ],
   imports: [
     BrowserModule,
