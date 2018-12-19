@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Input } from '@angular/core/src/metadata/directives';
+import { Input } from '@angular/core';
 
 
 @Component({
@@ -8,7 +8,11 @@ import { Input } from '@angular/core/src/metadata/directives';
 })
 export class DeviceComponent {
 
+  @Input('model') model: String;
+  @Input('producer') producer: String;
+  @Input('status') status: String;
   
+
   text: String;
 
   constructor() {
