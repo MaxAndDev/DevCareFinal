@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DeviceStorageProvider } from '../../providers/device-storage/device-storage';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
+import { DetailsPage } from '../details/details';
 
 @IonicPage()
 @Component({
@@ -27,6 +28,9 @@ export class OverviewPage {
 
   showDetail(id){
     console.log(id);
+    this.navCtrl.push(DetailsPage, {
+      data: id
+    });
   }
 
 }

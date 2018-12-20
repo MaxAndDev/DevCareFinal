@@ -19,6 +19,7 @@ import { GeneralStringsProvider } from '../providers/general-strings/general-str
 import { OverviewPage } from '../pages/overview/overview';
 import { DeviceStorageProvider } from '../providers/device-storage/device-storage';
 import { DeviceComponent } from '../components/device/device';
+import { DetailsPage } from '../pages/details/details';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { DeviceComponent } from '../components/device/device';
     HomePage,
     SigninPage,
     OverviewPage,
+    DetailsPage,
     DeviceComponent
   ],
   imports: [
@@ -38,7 +40,8 @@ import { DeviceComponent } from '../components/device/device';
     MyApp,
     HomePage,
     SigninPage,
-    OverviewPage
+    OverviewPage,
+    DetailsPage
   ],
   providers: [
     StatusBar,
