@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-buttons end>
+    <ion-buttons *ngIf="adminOptions == 'true'" end >
       <button ion-button icon-only (click)="onAdd()">
         <ion-icon name="add"></ion-icon>
       </button>
@@ -13,7 +13,7 @@
 
 <ion-content padding>
   <ion-searchbar></ion-searchbar>
-  <ion-fab right bottom>
+  <ion-fab *ngIf="adminOptions == 'true'" right bottom >
     <button ion-fab color="blue" (click)="clickQRScan()">
       <ion-icon name="qr-scanner"></ion-icon>
     </button>
