@@ -20,7 +20,9 @@ export class HomePage {
   onLogin(){
     this.httpService.getLogin(this.email, this.password).subscribe(response => {
       console.log(response.token);
+      console.log(response.admin);
       localStorage.setItem("token", response.token);
+      localStorage.setItem("admin", response.admin);
       this.navCtrl.push(OverviewPage);
     }, err => {
       console.log(err);
