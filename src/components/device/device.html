@@ -1,3 +1,13 @@
-<div>
-  {{producer}} {{model}} {{status}}
+<div *ngIf="status == 'borrow'">
+  <div id="text">{{producer}} {{model}}</div>
+  <div id="icon">
+    <ion-icon name="close-circle"></ion-icon>
+  </div>
+</div>
+
+<div *ngIf ="status != 'borrow'">
+  <div id="text">{{producer}} {{model}}</div>
+  <div id="icon">
+    <ion-icon name="checkmark-circle-outline"></ion-icon>
+  </div>
 </div>
