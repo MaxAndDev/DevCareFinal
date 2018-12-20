@@ -25,4 +25,8 @@ export class OverviewPage {
     this.devices = devices.devices;
   }
 
+  showDetail(id){
+    console.log(id);
+  }
+
 }
