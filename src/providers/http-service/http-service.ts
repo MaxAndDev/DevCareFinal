@@ -44,4 +44,13 @@ export class HttpServiceProvider {
     return this.http.get(this.api_url + this.device + id);
   }
 
+  postDevice(model, producer, owner, accessories){
+    return this.http.post(this.api_url + this.device, {
+      "model": model,
+      "producer": producer,
+      "owner": owner,
+      "accessories": accessories
+    })
+  }
+
 }
