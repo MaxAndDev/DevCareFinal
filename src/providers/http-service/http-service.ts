@@ -26,12 +26,13 @@ export class HttpServiceProvider {
     });
   }
 
-  setSignIn(email, password, company, name): Observable<any>{
+  setSignIn(email, password, company, name, admin): Observable<any>{
     return this.http.post(this.api_url + this.user + this.param_signin, {
       "email": email,
       "password": password,
       "company": company,
-      "name": name
+      "name": name,
+      "admin": admin
     });
   }
 
