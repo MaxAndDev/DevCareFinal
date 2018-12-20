@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the OverviewPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { DeviceStorageProvider } from '../../providers/device-storage/device-storage';
+import { HttpServiceProvider } from '../../providers/http-service/http-service';
 
 @IonicPage()
 @Component({
@@ -15,12 +10,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class OverviewPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  devices = []
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: HttpServiceProvider) { }
 
   ionViewDidLoad() {
+    this.httpService.getDevices().subscribe(result => {
+      this.extractDevices(result)
+    })
     
+  }
 
+  extractDevices(devices){
+    this.devices = devices.devices;
+  }
+
+  showDetail(id){
+    console.log(id);
   }
 
 }
