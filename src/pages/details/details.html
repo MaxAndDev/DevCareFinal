@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Device Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div>
+    <h1>{{producer}} {{model}}</h1>
+  </div>
+  <div id=owner>
+    <h2>Owner: {{owner}}</h2>
+  </div>
+  <ion-list id=list>
+    <ion-item>
+      <ion-label>Headphones</ion-label>
+      <ion-radio *ngIf="headphones != undefined" checked="true"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Charging Cable</ion-label>
+      <ion-radio *ngIf="cable != undefined" checked="true"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Adapter</ion-label>
+      <ion-radio *ngIf="adapter != undefined" checked="true"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>None</ion-label>
+      <ion-radio *ngIf="accessories?.length == 0 " checked="true"></ion-radio>
+    </ion-item>
+  </ion-list>
+</ion-content>

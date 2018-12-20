@@ -39,4 +39,8 @@ export class HttpServiceProvider {
     return this.http.get(this.api_url + this.device );
   }
 
+  getDevice(id){
+    return this.http.get(this.api_url + this.device + id);
+  }
+
 }
