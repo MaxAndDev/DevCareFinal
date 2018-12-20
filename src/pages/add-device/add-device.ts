@@ -8,6 +8,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddDevicePage {
 
+  model: String;
+  producer: String;
+  owner: String;
+  accessories: String[] = [];
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -15,8 +20,14 @@ export class AddDevicePage {
     console.log('ionViewDidLoad AddDevicePage');
   }
 
-  addDevice(){
-    console.log("pressed");
+  selectRadioButton(value){
+    this.accessories.push(value);
+    console.log(this.accessories);
   }
+
+  addDevice(model, producer, owner, accessories){
+    
+  }
+
 
 }
