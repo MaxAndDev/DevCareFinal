@@ -20,7 +20,7 @@ export class SigninPage {
   password: String;
   company: String;
   name: String;
-  admin: Boolean;
+  admin: Boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: HttpServiceProvider, private errHandler: ErrorServiceProvider, private alert: AlertServiceProvider, private generalStrings: GeneralStringsProvider) { }
   ionViewDidLoad() {
