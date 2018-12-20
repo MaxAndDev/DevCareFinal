@@ -10,19 +10,23 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HttpServiceProvider } from '../providers/http-service/http-service';
-import { TokenStorageProvider } from '../providers/token-storage/token-storage';
 import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-interceptor';
 import { SigninPage } from '../pages/signin/signin';
 import { AlertServiceProvider } from '../providers/alert-service/alert-service';
 import { ErrorServiceProvider } from '../providers/error-service/error-service';
 import { AlertStringsProvider } from '../providers/alert-strings/alert-strings';
 import { GeneralStringsProvider } from '../providers/general-strings/general-strings';
+import { OverviewPage } from '../pages/overview/overview';
+import { DeviceStorageProvider } from '../providers/device-storage/device-storage';
+import { DeviceComponent } from '../components/device/device';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    SigninPage
+    SigninPage,
+    OverviewPage,
+    DeviceComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import { GeneralStringsProvider } from '../providers/general-strings/general-str
   entryComponents: [
     MyApp,
     HomePage,
-    SigninPage
+    SigninPage,
+    OverviewPage
   ],
   providers: [
     StatusBar,
@@ -41,13 +46,12 @@ import { GeneralStringsProvider } from '../providers/general-strings/general-str
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
     HttpServiceProvider,
-    TokenStorageProvider,
     AuthInterceptorProvider,
     AlertServiceProvider,
-    TokenStorageProvider,
-    ErrorServiceProvider,
     AlertStringsProvider,
-    GeneralStringsProvider
+    ErrorServiceProvider,
+    GeneralStringsProvider,
+    DeviceStorageProvider
   ]
 })
 export class AppModule {}

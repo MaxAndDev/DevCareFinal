@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="onAdd()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Device Care</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-searchbar></ion-searchbar>
+  <ion-fab right bottom>
+    <button ion-fab color="blue" (click)="clickQRScan()">
+      <ion-icon name="qr-scanner"></ion-icon>
+    </button>
+  </ion-fab>
+  <ion-list>
+    <ion-item *ngFor="let device of devices">
+      <device (click)="showDetail(device._id)" model="{{device.model}}" producer="{{device.producer}}" status="{{device.status}}"></device>
+    </ion-item>
+  </ion-list>
+</ion-content>
