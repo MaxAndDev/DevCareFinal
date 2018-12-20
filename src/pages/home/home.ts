@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { SigninPage } from '../signin/signin';
 import { OverviewPage } from '../overview/overview';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
+import { AddDevicePage } from '../add-device/add-device';
 
 @Component({
   selector: 'page-home',
@@ -31,6 +32,10 @@ export class HomePage {
 
   onSignIn(){
     this.navCtrl.push(SigninPage);
+  }
+
+  onAdd(){
+    this.navCtrl.push(AddDevicePage)
   }
 
 }

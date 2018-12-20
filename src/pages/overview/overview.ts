@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DeviceStorageProvider } from '../../providers/device-storage/device-storage';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
 import { DetailsPage } from '../details/details';
+import { AddDevicePage } from '../add-device/add-device';
 
 @IonicPage()
 @Component({
@@ -32,6 +33,10 @@ export class OverviewPage {
     this.navCtrl.push(DetailsPage, {
       data: id
     });
+  }
+
+  onAdd(){
+    this.navCtrl.push(AddDevicePage);
   }
 
 }
