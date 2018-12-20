@@ -49,6 +49,7 @@ export class HttpServiceProvider {
       "model": model,
       "producer": producer,
       "owner": owner,
+      "status": "existing",
       "accessories": accessories
     })
   }
