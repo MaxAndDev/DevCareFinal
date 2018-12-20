@@ -20,6 +20,7 @@ export class SigninPage {
   password: String;
   company: String;
   name: String;
+  admin: Boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: HttpServiceProvider, private errHandler: ErrorServiceProvider, private alert: AlertServiceProvider, private generalStrings: GeneralStringsProvider) { }
   ionViewDidLoad() {
@@ -28,13 +29,13 @@ export class SigninPage {
 
   selectedRadioBtn(value) {
     console.log(value);
-    return value;
+    this.admin = value;
   }
 
 
   onRegister() {
-    console.log("Registration called", this.email, this.password, this.company, this.name);
-    this.httpService.setSignIn(this.email, this.password, this.company, this.name).subscribe(data => {
+    console.log("Registration called", this.email, this.password, this.company, this.name, this.admin);
+    this.httpService.setSignIn(this.email, this.password, this.company, this.name, this.admin).subscribe(data => {
       console.log(data);
       this.alert.createAlertHandler(this.generalStrings.module_SignIn, this.generalStrings.StatusSuccess);
     }, err => {
