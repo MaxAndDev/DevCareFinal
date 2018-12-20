@@ -11,7 +11,8 @@ import { DetailsPage } from '../details/details';
 })
 export class OverviewPage {
 
-  devices = []
+  devices = [];
+  adminOptions: String;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: HttpServiceProvider) { }
 
@@ -19,7 +20,7 @@ export class OverviewPage {
     this.httpService.getDevices().subscribe(result => {
       this.extractDevices(result)
     })
-    
+    this.adminOptions = localStorage.getItem('admin');
   }
 
   extractDevices(devices){
