@@ -16,6 +16,10 @@ export class DetailsPage {
   producer: String;
   owner: String;
   accessories: String[];
+  headphones: String;
+  cable: String;
+  adapter: String;
+  none: String;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: HttpServiceProvider, private errorHandler: ErrorServiceProvider, private generalStrings: GeneralStringsProvider) {
@@ -24,7 +28,6 @@ export class DetailsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailsPage');
     this.httpService.getDevice(this.id).subscribe(response =>{
       this.extractDetails(response);
     }, err => {
@@ -37,7 +40,13 @@ export class DetailsPage {
     this.producer = device.producer;
     this.owner = device.owner;
     this.accessories = device.accessories;
+    if(this.accessories.length != 0){
+      this.headphones = this.accessories[0];
+      this.cable = this.accessories[1];
+      this.adapter = this.accessories[2];
+    }
     console.log(this.model, this.producer, this.owner, this.accessories);
+    console.log(this.headphones, this.cable, this.adapter);
   }
 
 }
