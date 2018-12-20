@@ -20,6 +20,7 @@ import { OverviewPage } from '../pages/overview/overview';
 import { DeviceStorageProvider } from '../providers/device-storage/device-storage';
 import { DeviceComponent } from '../components/device/device';
 import { DetailsPage } from '../pages/details/details';
+import { AddDevicePage } from '../pages/add-device/add-device';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DetailsPage } from '../pages/details/details';
     SigninPage,
     OverviewPage,
     DetailsPage,
+    AddDevicePage,
     DeviceComponent
   ],
   imports: [
@@ -41,7 +43,8 @@ import { DetailsPage } from '../pages/details/details';
     HomePage,
     SigninPage,
     OverviewPage,
-    DetailsPage
+    DetailsPage,
+    AddDevicePage
   ],
   providers: [
     StatusBar,
