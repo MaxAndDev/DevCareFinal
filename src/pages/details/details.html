@@ -32,4 +32,5 @@
       <ion-radio *ngIf="accessories?.length == 0 " checked="true"></ion-radio>
     </ion-item>
   </ion-list>
+  <button *ngIf="admin_options == 'true'" ion-button full (click)="removeDev()">Remove Device</button>
 </ion-content>

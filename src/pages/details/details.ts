@@ -21,10 +21,13 @@ export class DetailsPage {
   adapter: String;
   none: String;
 
+  admin_options:String;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: HttpServiceProvider, private errorHandler: ErrorServiceProvider, private generalStrings: GeneralStringsProvider) {
     this.id = this.navParams.get('data');
     console.log(this.id);
+    this.admin_options = localStorage.getItem('admin');
   }
 
   ionViewDidLoad() {
@@ -47,6 +50,10 @@ export class DetailsPage {
     }
     console.log(this.model, this.producer, this.owner, this.accessories);
     console.log(this.headphones, this.cable, this.adapter);
+  }
+
+  removeDev(){
+
   }
 
 }
