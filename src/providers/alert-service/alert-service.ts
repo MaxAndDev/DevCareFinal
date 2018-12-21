@@ -36,6 +36,18 @@ export class AlertServiceProvider {
       case "Scanner" && "Err":
         this.creatAlert(this.alertStrings.title_Scanner, this.alertStrings.text_Scanner_err);
         break;
+      case "Add" && "Success":
+        this.creatAlert(this.alertStrings.title_add, this.alertStrings.text_addDevice_suc);
+        break;
+      case "Add" && "Err":
+        this.creatAlert(this.alertStrings.title_add, this.alertStrings.text_addDevice_err);
+        break;
+      case "Delete" && "Suc":
+        this.creatAlert(this.alertStrings.title_delete, this.alertStrings.text_deleteDevice_suc);
+        break;
+      case "Delete" && "Err":
+        this.creatAlert(this.alertStrings.title_delete, this.alertStrings.text_deleteDevice_err);
+        break;
       case "GetDevice" && "Err":
         this.creatAlert(this.alertStrings.title_GetDev, this.alertStrings.text_GetDev_err);
         break;
