@@ -54,4 +54,8 @@ export class HttpServiceProvider {
     })
   }
 
+  deleteDevice(id) {
+    return this.http.delete(this.api_url+ this.device + id);
+  }
+
 }
