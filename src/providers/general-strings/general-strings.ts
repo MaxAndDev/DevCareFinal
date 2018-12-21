@@ -10,6 +10,7 @@ export class GeneralStringsProvider {
   module_Overview: String = 'Overview'
   module_Details: String = 'Details'
   module_Scanner: String = 'Scanner'
+  module_addDev: String = 'Add'
   module_GetDev: String = 'GetDev'
   module_GiveDev: String = 'GiveDev'
 
