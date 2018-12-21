@@ -15,27 +15,29 @@ export class OverviewPage {
   devices = [];
   adminOptions: String;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: HttpServiceProvider) { }
-
-  ionViewDidLoad() {
-    this.httpService.getDevices().subscribe(result => {
-      this.extractDevices(result)
-    })
+  constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: HttpServiceProvider) {
     this.adminOptions = localStorage.getItem('admin');
   }
 
-  extractDevices(devices){
+  ionViewWillEnter() {
+    this.httpService.getDevices().subscribe(result => {
+      console.log(result);
+      this.extractDevices(result);
+    })
+  }
+
+  extractDevices(devices) {
     this.devices = devices.devices;
   }
 
-  showDetail(id){
+  showDetail(id) {
     console.log(id);
     this.navCtrl.push(DetailsPage, {
       data: id
     });
   }
 
-  onAdd(){
+  onAdd() {
     this.navCtrl.push(AddDevicePage);
   }
 
