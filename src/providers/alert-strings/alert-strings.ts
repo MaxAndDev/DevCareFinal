@@ -16,6 +16,14 @@ export class AlertStringsProvider {
   title_Details: String = 'Device Details'
   text_Details_err: String = 'Somthing went wrong!'
 
+  title_add: String = 'Add Device'
+  text_addDevice_suc: String = 'Device created!'
+  text_addDevice_err: String = 'Something went wrong!'
+
+  title_delete: String = 'Remove Device'
+  text_deleteDevice_suc: String = 'Removed device successfully!'
+  text_deleteDevice_err: String = 'Something went wrong!'
+
   title_Scanner: String = 'Scanner'
   text_Scanner_err: String = 'Something went wrong!'
 
