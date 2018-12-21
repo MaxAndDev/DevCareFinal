@@ -11,8 +11,12 @@ export class ErrorServiceProvider {
 
   handleError(error, module) {
     switch (error.status) {
+      case 0:
+        this.alertCntrl.createAlertHandler(this.generalStrings.module_Connection, this.generalStrings.StautsError);
+      break;
       case 401:
         console.log(error);
+
         break;
       case 404:
         console.log(error);

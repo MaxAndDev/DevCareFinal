@@ -15,6 +15,8 @@ export class GeneralStringsProvider {
   module_GetDev: String = 'GetDev'
   module_GiveDev: String = 'GiveDev'
 
+  module_Connection: String = 'Connection'
+
   StautsError: String = "Err"
   StatusSuccess: String = "Success"
 

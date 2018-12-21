@@ -33,4 +33,7 @@ export class AlertStringsProvider {
   title_GetDev: String = 'Get Device'
   text_GetDev_err: String = 'Something went wrong!'
 
+  title_Connection: String ='Connection Error'
+  text_Connection: String = 'No Wifi connection!'
+
 }
