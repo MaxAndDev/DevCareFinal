@@ -4,6 +4,8 @@ import { SigninPage } from '../signin/signin';
 import { OverviewPage } from '../overview/overview';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
 import { AddDevicePage } from '../add-device/add-device';
+import { ErrorServiceProvider } from '../../providers/error-service/error-service';
+import { GeneralStringsProvider } from '../../providers/general-strings/general-strings';
 
 @Component({
   selector: 'page-home',
@@ -14,11 +16,11 @@ export class HomePage {
   email: String;
   password: String;
 
-  constructor(public navCtrl: NavController, private httpService: HttpServiceProvider) {
-   
+  constructor(public navCtrl: NavController, private httpService: HttpServiceProvider, private errorHandler: ErrorServiceProvider, private generalStrings: GeneralStringsProvider) {
+
   }
 
-  onLogin(){
+  onLogin() {
     this.httpService.getLogin(this.email, this.password).subscribe(response => {
       console.log(response.token);
       console.log(response.admin);
@@ -26,15 +28,15 @@ export class HomePage {
       localStorage.setItem("admin", response.admin);
       this.navCtrl.push(OverviewPage);
     }, err => {
-      console.log(err);
-    }); 
+      this.errorHandler.handleError(err, this.generalStrings.module_Login);
+    });
   }
 
-  onSignIn(){
+  onSignIn() {
     this.navCtrl.push(SigninPage);
   }
 
-  onAdd(){
+  onAdd() {
     this.navCtrl.push(AddDevicePage)
   }
 

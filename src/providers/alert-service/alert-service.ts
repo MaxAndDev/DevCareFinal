@@ -22,6 +22,15 @@ export class AlertServiceProvider {
   createAlertHandler(modul, status) {
     console.log("AlertHandler", modul, status);
     switch (true) {
+      case (modul == "Connection" && status == "Err"):
+        this.creatAlert(this.alertStrings.title_Connection, this.alertStrings.text_Connection);
+        break;
+      case (modul == "Server" && status == "Err"):
+        this.creatAlert(this.alertStrings.title_Server, this.alertStrings.text_Server_err);
+        break;
+      case (modul == "Login" && status == "Err"):
+        this.creatAlert(this.alertStrings.title_Login, this.alertStrings.text_Login_err);
+        break;
       case (modul == "Signin" && status == "Success"):
         this.creatAlert(this.alertStrings.title_SignIn, this.alertStrings.text_SignIn_suc);
         break;

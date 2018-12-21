@@ -10,8 +10,11 @@ export class AlertStringsProvider {
   text_SignIn_err: String = 'E-Mail already exists!'
   text_SignIn_suc: String = 'Sign In was successful!'
 
+  title_Login: String = 'Login'
+  text_Login_err: String = 'Auth failed!'
+
   title_Overview: String = 'Overview'
-  text_Overview_err: String = 'Something went wrong!'
+  text_Overview_err: String = 'Device not found!'
 
   title_Details: String = 'Device Details'
   text_Details_err: String = 'Somthing went wrong!'
@@ -32,5 +35,11 @@ export class AlertStringsProvider {
 
   title_GetDev: String = 'Get Device'
   text_GetDev_err: String = 'Something went wrong!'
+
+  title_Connection: String = 'Connection Error'
+  text_Connection: String = 'No Wifi connection!'
+
+  title_Server: String = 'Ups!'
+  text_Server_err: String = 'Internal Server Error'
 
 }

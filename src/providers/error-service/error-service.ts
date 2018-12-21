@@ -9,22 +9,26 @@ export class ErrorServiceProvider {
 
   constructor(public http: HttpClient, private alertCntrl: AlertServiceProvider, private generalStrings: GeneralStringsProvider) { }
 
-  handleError(error, module) {
+  handleError(error, modul) {
     switch (error.status) {
-      case 401:
-        console.log(error);
+      case 0: //no connection
+        this.alertCntrl.createAlertHandler(this.generalStrings.module_Connection, this.generalStrings.StautsError);
         break;
-      case 404:
+      case 401: //auth failed login
         console.log(error);
+        this.alertCntrl.createAlertHandler(this.generalStrings.module_Login, this.generalStrings.StautsError);
         break;
-      case 409:
+      case 404: // get Device nothing found for id
         console.log(error);
-        console.log(error.status);
+        this.alertCntrl.creatAlert(this.generalStrings.module_Overview, this.generalStrings.StautsError);
+        break;
+      case 409: // mail already exists sign in
+        console.log(error);
         this.alertCntrl.createAlertHandler(this.generalStrings.module_SignIn, this.generalStrings.StautsError);
         break;
-      case 500:
+      default: //500
         console.log(error);
-        console.log(error.status);
+        this.alertCntrl.createAlertHandler(this.generalStrings.module_Server, this.generalStrings.StautsError);
         break;
     }
   }
