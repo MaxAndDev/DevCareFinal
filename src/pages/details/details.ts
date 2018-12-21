@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
 import { ErrorServiceProvider } from '../../providers/error-service/error-service';
 import { GeneralStringsProvider } from '../../providers/general-strings/general-strings';
+import { AlertServiceProvider } from '../../providers/alert-service/alert-service';
 
 @IonicPage()
 @Component({
@@ -21,10 +22,13 @@ export class DetailsPage {
   adapter: String;
   none: String;
 
+  admin_options:String;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: HttpServiceProvider, private errorHandler: ErrorServiceProvider, private generalStrings: GeneralStringsProvider) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: HttpServiceProvider, private errorHandler: ErrorServiceProvider, private generalStrings: GeneralStringsProvider, private alertCtrl: AlertServiceProvider) {
     this.id = this.navParams.get('data');
     console.log(this.id);
+    this.admin_options = localStorage.getItem('admin');
   }
 
   ionViewDidLoad() {
@@ -47,6 +51,15 @@ export class DetailsPage {
     }
     console.log(this.model, this.producer, this.owner, this.accessories);
     console.log(this.headphones, this.cable, this.adapter);
+  }
+
+  removeDev(){
+    this.httpService.deleteDevice(this.id).subscribe(response => {
+      console.log(response);
+      this.alertCtrl.createAlertHandler(this.generalStrings.module_deleteDev, this.generalStrings.StatusSuccess);
+    }, err =>{
+      this.errorHandler.handleError(err, this.generalStrings.module_deleteDev);
+    })
   }
 
 }

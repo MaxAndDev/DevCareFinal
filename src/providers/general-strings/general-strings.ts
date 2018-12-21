@@ -11,6 +11,7 @@ export class GeneralStringsProvider {
   module_Details: String = 'Details'
   module_Scanner: String = 'Scanner'
   module_addDev: String = 'Add'
+  module_deleteDev: String = 'Delete'
   module_GetDev: String = 'GetDev'
   module_GiveDev: String = 'GiveDev'
 

@@ -20,6 +20,7 @@ export class AlertServiceProvider {
   }
 
   createAlertHandler(modul, status) {
+    console.log("AlertHandler", modul, status);
     switch (modul && status) {
       case "Signin" && "Success":
         this.creatAlert(this.alertStrings.title_SignIn, this.alertStrings.text_SignIn_suc);
@@ -37,6 +38,7 @@ export class AlertServiceProvider {
         this.creatAlert(this.alertStrings.title_Scanner, this.alertStrings.text_Scanner_err);
         break;
       case "Add" && "Success":
+        console.log("2");
         this.creatAlert(this.alertStrings.title_add, this.alertStrings.text_addDevice_suc);
         break;
       case "Add" && "Err":
