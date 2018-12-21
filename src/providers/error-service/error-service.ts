@@ -14,6 +14,9 @@ export class ErrorServiceProvider {
       case 401:
         console.log(error);
         break;
+      case 404:
+        console.log(error);
+        break;
       case 409:
         console.log(error);
         console.log(error.status);
