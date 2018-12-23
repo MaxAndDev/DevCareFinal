@@ -16,18 +16,18 @@ export class HttpServiceProvider {
 
 
   constructor(private http: HttpClient) {
-   
+
   }
 
 
-  getLogin(email, password): Observable<any>{
+  getLogin(email, password): Observable<any> {
     return this.http.post(this.api_url + this.user + this.param_login, {
       "email": email,
       "password": password
     });
   }
 
-  setSignIn(email, password, company, name, admin): Observable<any>{
+  setSignIn(email, password, company, name, admin): Observable<any> {
     return this.http.post(this.api_url + this.user + this.param_signin, {
       "email": email,
       "password": password,
@@ -37,15 +37,15 @@ export class HttpServiceProvider {
     });
   }
 
-  getDevices(){
-    return this.http.get(this.api_url + this.device );
+  getDevices() {
+    return this.http.get(this.api_url + this.device);
   }
 
-  getDevice(id){
+  getDevice(id) {
     return this.http.get(this.api_url + this.device + id);
   }
 
-  postDevice(model, producer, owner, accessories){
+  postDevice(model, producer, owner, accessories) {
     return this.http.post(this.api_url + this.device, {
       "model": model,
       "producer": producer,
@@ -56,9 +56,14 @@ export class HttpServiceProvider {
   }
 
   deleteDevice(id) {
-    return this.http.delete(this.api_url+ this.device + id);
+    return this.http.delete(this.api_url + this.device + id);
   }
 
-  
+  patchDevice(id, status) {
+    return this.http.patch(this.api_url + this.device + id, {
+      "status": status
+    })
+  }
+
 
 }
