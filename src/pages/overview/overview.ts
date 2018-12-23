@@ -8,6 +8,7 @@ import { ErrorServiceProvider } from '../../providers/error-service/error-servic
 import { GeneralStringsProvider } from '../../providers/general-strings/general-strings';
 
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { ScanningPage } from '../scanning/scanning';
 
 @IonicPage()
 @Component({
@@ -55,6 +56,8 @@ export class OverviewPage {
   callQRScanner(){
     this.QRScanner.scan().then(qrData => {
       console.log(qrData);
+      this.navCtrl.push(ScanningPage);
+      this.navParams.data(qrData);
     }, err => {
       this.errorHandler.handleError(err, this.generalStrings.module_Scanner);
     })
