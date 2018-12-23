@@ -24,6 +24,7 @@ import { AddDevicePage } from '../pages/add-device/add-device';
 
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { ScanningPage } from '../pages/scanning/scanning';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     OverviewPage,
     DetailsPage,
     AddDevicePage,
+    ScanningPage,
     DeviceComponent
   ],
   imports: [
@@ -48,7 +50,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     SigninPage,
     OverviewPage,
     DetailsPage,
-    AddDevicePage
+    AddDevicePage,
+    ScanningPage
   ],
   providers: [
     StatusBar,
