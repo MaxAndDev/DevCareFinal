@@ -22,6 +22,7 @@ export class ScanningPage {
   cable: Boolean;
   adapter: Boolean;
   none: Boolean;
+  status : String;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -44,6 +45,7 @@ export class ScanningPage {
     this.model = device.model;
     this.producer = device.producer;
     this.owner = device.owner;
+    this.status = device.status;
     this.accessories = device.accessories;
     if (this.accessories.length != 0) {
       for (var i = 0; i < this.accessories.length; i++) {

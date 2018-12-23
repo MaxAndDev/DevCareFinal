@@ -6,30 +6,30 @@
 
 
 <ion-content padding>
-    <div>
-        <h1>{{producer}} {{model}}</h1>
-      </div>
-      <div id=owner>
-        <h2>Owner: {{owner}}</h2>
-      </div>
-      <ion-list id=list>
-        <ion-item>
-          <ion-label>Headphones</ion-label>
-          <ion-radio *ngIf="headphones == true" checked="true"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>Charging Cable</ion-label>
-          <ion-radio *ngIf="cable == true" checked="true"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>Adapter</ion-label>
-          <ion-radio *ngIf="adapter == true" checked="true"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>None</ion-label>
-          <ion-radio *ngIf="none == true " checked="true"></ion-radio>
-        </ion-item>
-      </ion-list>
-  <button ion-button full (click)="borrowDevice()">Borrow</button>
-  <button ion-button full (click)="giveBackDevice()" >Give Back</button>  
+  <div>
+    <h1>{{producer}} {{model}}</h1>
+  </div>
+  <div id=owner>
+    <h2>Owner: {{owner}}</h2>
+  </div>
+  <ion-list id=list>
+    <ion-item>
+      <ion-label>Headphones</ion-label>
+      <ion-radio *ngIf="headphones == true" checked="true"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Charging Cable</ion-label>
+      <ion-radio *ngIf="cable == true" checked="true"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Adapter</ion-label>
+      <ion-radio *ngIf="adapter == true" checked="true"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>None</ion-label>
+      <ion-radio *ngIf="none == true " checked="true"></ion-radio>
+    </ion-item>
+  </ion-list>
+  <button *ngIf="status != 'borrow'" ion-button full (click)="borrowDevice()">Borrow</button>
+  <button *ngIf="status == 'borrow'" ion-button full (click)="giveBackDevice()">Give Back</button>
 </ion-content>
