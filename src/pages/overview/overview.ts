@@ -45,4 +45,8 @@ export class OverviewPage {
     this.navCtrl.push(AddDevicePage);
   }
 
+  callQRScanner(){
+    
+  }
+
 }
