@@ -7,6 +7,9 @@ import { AddDevicePage } from '../add-device/add-device';
 import { ErrorServiceProvider } from '../../providers/error-service/error-service';
 import { GeneralStringsProvider } from '../../providers/general-strings/general-strings';
 
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { ScanningPage } from '../scanning/scanning';
+
 @IonicPage()
 @Component({
   selector: 'page-overview',
@@ -17,7 +20,12 @@ export class OverviewPage {
   devices = [];
   adminOptions: String;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private httpService: HttpServiceProvider, private errorHandler: ErrorServiceProvider, private generalStrings: GeneralStringsProvider) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private httpService: HttpServiceProvider,
+    private errorHandler: ErrorServiceProvider,
+    private generalStrings: GeneralStringsProvider,
+    private QRScanner: BarcodeScanner) {
     this.adminOptions = localStorage.getItem('admin');
   }
 
@@ -43,6 +51,18 @@ export class OverviewPage {
 
   onAdd() {
     this.navCtrl.push(AddDevicePage);
+  }
+
+  callQRScanner() {
+    this.QRScanner.scan().then(qrData => {
+      console.log(qrData);
+      this.navCtrl.push(ScanningPage, {
+        data: qrData.text
+      });
+    }, err => {
+      this.errorHandler.handleError(err, this.generalStrings.module_Scanner);
+    })
+
   }
 
 }

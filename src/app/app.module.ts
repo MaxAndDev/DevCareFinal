@@ -22,6 +22,10 @@ import { DeviceComponent } from '../components/device/device';
 import { DetailsPage } from '../pages/details/details';
 import { AddDevicePage } from '../pages/add-device/add-device';
 
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { ScanningPage } from '../pages/scanning/scanning';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -30,11 +34,13 @@ import { AddDevicePage } from '../pages/add-device/add-device';
     OverviewPage,
     DetailsPage,
     AddDevicePage,
+    ScanningPage,
     DeviceComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgxQRCodeModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -44,11 +50,13 @@ import { AddDevicePage } from '../pages/add-device/add-device';
     SigninPage,
     OverviewPage,
     DetailsPage,
-    AddDevicePage
+    AddDevicePage,
+    ScanningPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
     HttpServiceProvider,
