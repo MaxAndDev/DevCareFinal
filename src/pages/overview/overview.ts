@@ -20,11 +20,11 @@ export class OverviewPage {
   devices = [];
   adminOptions: String;
 
-  constructor(public navCtrl: NavController, 
-    public navParams: NavParams, 
-    private httpService: HttpServiceProvider, 
-    private errorHandler: ErrorServiceProvider, 
-    private generalStrings: GeneralStringsProvider, 
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private httpService: HttpServiceProvider,
+    private errorHandler: ErrorServiceProvider,
+    private generalStrings: GeneralStringsProvider,
     private QRScanner: BarcodeScanner) {
     this.adminOptions = localStorage.getItem('admin');
   }
@@ -53,13 +53,12 @@ export class OverviewPage {
     this.navCtrl.push(AddDevicePage);
   }
 
-  callQRScanner(){
+  callQRScanner() {
     this.QRScanner.scan().then(qrData => {
       console.log(qrData);
       this.navCtrl.push(ScanningPage, {
         data: qrData.text
       });
-      
     }, err => {
       this.errorHandler.handleError(err, this.generalStrings.module_Scanner);
     })

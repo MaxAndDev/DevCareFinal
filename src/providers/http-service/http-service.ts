@@ -59,4 +59,6 @@ export class HttpServiceProvider {
     return this.http.delete(this.api_url+ this.device + id);
   }
 
+  
+
 }
