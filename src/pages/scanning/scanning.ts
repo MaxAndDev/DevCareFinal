@@ -63,6 +63,13 @@ export class ScanningPage {
     console.log(this.headphones, this.cable, this.adapter);
   }
 
+  borrowDevice(){
+    
+  }
+
+  giveBackDevice(){
+
+  }
 
 
 }
