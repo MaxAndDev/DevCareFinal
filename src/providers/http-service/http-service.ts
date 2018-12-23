@@ -7,7 +7,8 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class HttpServiceProvider {
 
-  api_url = "http://localhost:3030/";
+  api_url = "http://192.168.0.3:3030/"
+  //api_url = "http://localhost:3030/";
   user = "user/"
   device = "device/"
   param_login = "login";

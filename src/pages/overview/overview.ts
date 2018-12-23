@@ -56,8 +56,10 @@ export class OverviewPage {
   callQRScanner(){
     this.QRScanner.scan().then(qrData => {
       console.log(qrData);
-      this.navCtrl.push(ScanningPage);
-      this.navParams.data(qrData);
+      this.navCtrl.push(ScanningPage, {
+        data: qrData.text
+      });
+      
     }, err => {
       this.errorHandler.handleError(err, this.generalStrings.module_Scanner);
     })
