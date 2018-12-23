@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
 import { ErrorServiceProvider } from '../../providers/error-service/error-service';
 import { GeneralStringsProvider } from '../../providers/general-strings/general-strings';
+import { AlertServiceProvider } from '../../providers/alert-service/alert-service';
 
 
 @IonicPage()
@@ -14,7 +15,7 @@ export class ScanningPage {
 
   qrData: String;
   model: String;
-  producer: String; 
+  producer: String;
   owner: String;
   accessories: String;
   headphones: Boolean;
@@ -22,11 +23,12 @@ export class ScanningPage {
   adapter: Boolean;
   none: Boolean;
 
-  constructor(public navCtrl: NavController, 
-    public navParams: NavParams, 
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
     private httpService: HttpServiceProvider,
     private errorHandler: ErrorServiceProvider,
-    private generalStrings: GeneralStringsProvider) {  }
+    private alertCtrl: AlertServiceProvider,
+    private generalStrings: GeneralStringsProvider) { }
 
   ionViewDidLoad() {
     this.qrData = this.navParams.get('data');
@@ -45,16 +47,16 @@ export class ScanningPage {
     this.accessories = device.accessories;
     if (this.accessories.length != 0) {
       for (var i = 0; i < this.accessories.length; i++) {
-        if(this.accessories[i] == "Headphones"){
+        if (this.accessories[i] == "Headphones") {
           this.headphones = true;
         }
-        if(this.accessories[i] == "Charging Cable"){
+        if (this.accessories[i] == "Charging Cable") {
           this.cable = true;
         }
-        if(this.accessories[i] == "Adapter"){
-          this.adapter= true;
+        if (this.accessories[i] == "Adapter") {
+          this.adapter = true;
         }
-        if(this.accessories[i] == "None"){
+        if (this.accessories[i] == "None") {
           this.none = true;
         }
       }
@@ -63,11 +65,22 @@ export class ScanningPage {
     console.log(this.headphones, this.cable, this.adapter);
   }
 
-  borrowDevice(){
-    
+  borrowDevice() {
+    this.httpService.patchDevice(this.qrData, 'borrow').subscribe(response => {
+      console.log(response);
+      this.alertCtrl.createAlertHandler(this.generalStrings.module_Scanner, this.generalStrings.StatusSuccess)
+    }, err => {
+      this.errorHandler.handleError(err, this.generalStrings.module_Scanner);
+    })
   }
 
-  giveBackDevice(){
+  giveBackDevice() {
+    this.httpService.patchDevice(this.qrData, 'existing').subscribe(response => {
+      console.log(response);
+      this.alertCtrl.createAlertHandler(this.generalStrings.module_Scanner, this.generalStrings.StatusSuccess);
+    }, err => {
+      this.errorHandler.handleError(err, this.generalStrings.module_Scanner);
+    })
 
   }
 

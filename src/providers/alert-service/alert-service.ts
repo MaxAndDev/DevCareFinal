@@ -46,6 +46,9 @@ export class AlertServiceProvider {
       case (modul == "Scanner" && status == "Err"):
         this.creatAlert(this.alertStrings.title_Scanner, this.alertStrings.text_Scanner_err);
         break;
+      case (modul == "Scanner" && status == "Success"):
+        this.creatAlert(this.alertStrings.title_Scanner, this.alertStrings.text_Scanner_suc);
+        break;
       case (modul == "Add" && status == "Success"):
         this.creatAlert(this.alertStrings.title_add, this.alertStrings.text_addDevice_suc);
         break;

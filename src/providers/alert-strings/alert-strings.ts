@@ -29,6 +29,7 @@ export class AlertStringsProvider {
 
   title_Scanner: String = 'Scanner'
   text_Scanner_err: String = 'Something went wrong!'
+  text_Scanner_suc: String = 'Updating Device Info successful!'
 
   title_GiveDev: String = 'Give Device'
   text_GiveDev_err: String = 'Something went wrong!'
